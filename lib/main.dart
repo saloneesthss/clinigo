@@ -1,9 +1,9 @@
 import 'package:clinigo/constants/app_theme.dart';
-import 'package:clinigo/auth_screens.dart';
-import 'package:clinigo/main_shell.dart';
-import 'package:clinigo/onboarding_screen.dart';
+import 'package:clinigo/screens/auth_screens.dart';
+import 'package:clinigo/screens/main_shell.dart';
+import 'package:clinigo/screens/onboarding_screen.dart';
 import 'package:flutter/material.dart';
-import 'splash_screen.dart';
+import 'screens/splash_screen.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();

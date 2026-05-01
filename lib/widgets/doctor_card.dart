@@ -1,5 +1,5 @@
 import 'package:clinigo/constants/app_theme.dart';
-import 'package:clinigo/models.dart';
+import 'package:clinigo/models/models.dart';
 import 'package:flutter/material.dart';
 
 class DoctorCard extends StatelessWidget {

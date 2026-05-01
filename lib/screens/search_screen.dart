@@ -1,8 +1,8 @@
 import 'dart:async';
 import 'package:clinigo/constants/app_theme.dart';
-import 'package:clinigo/db_helper.dart';
-import 'package:clinigo/doctor_card.dart';
-import 'package:clinigo/models.dart';
+import 'package:clinigo/database/db_helper.dart';
+import 'package:clinigo/widgets/doctor_card.dart';
+import 'package:clinigo/models/models.dart';
 import 'package:flutter/material.dart';
 import 'doctor_detail_screen.dart';
 

@@ -1,8 +1,8 @@
 import 'package:clinigo/constants/app_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:clinigo/home_screen.dart';
-import 'package:clinigo/appointments_screen.dart';
-import 'package:clinigo/profile_screen.dart';
+import 'package:clinigo/screens/home_screen.dart';
+import 'package:clinigo/screens/appointments_screen.dart';
+import 'package:clinigo/screens/profile_screen.dart';
 
 class MainShell extends StatefulWidget {
   final int initialIndex;

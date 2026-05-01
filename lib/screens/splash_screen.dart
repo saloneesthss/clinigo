@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:clinigo/auth_service.dart';
+import 'package:clinigo/database/auth_service.dart';
 import 'package:clinigo/constants/app_theme.dart';
 
 class SplashScreen extends StatefulWidget {

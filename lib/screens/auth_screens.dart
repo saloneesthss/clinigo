@@ -1,5 +1,5 @@
 import 'package:clinigo/constants/app_theme.dart';
-import 'package:clinigo/auth_service.dart';
+import 'package:clinigo/database/auth_service.dart';
 import 'package:flutter/material.dart';
 
 class RegisterScreen extends StatefulWidget {

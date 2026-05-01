@@ -1,6 +1,6 @@
 import 'package:clinigo/constants/app_theme.dart';
-import 'package:clinigo/db_helper.dart';
-import 'package:clinigo/models.dart';
+import 'package:clinigo/database/db_helper.dart';
+import 'package:clinigo/models/models.dart';
 import 'package:flutter/material.dart';
 import 'booking_screen.dart';
 

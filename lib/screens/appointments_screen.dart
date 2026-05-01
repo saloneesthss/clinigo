@@ -1,7 +1,7 @@
 import 'package:clinigo/constants/app_theme.dart';
-import 'package:clinigo/auth_service.dart';
-import 'package:clinigo/db_helper.dart';
-import 'package:clinigo/models.dart';
+import 'package:clinigo/database/auth_service.dart';
+import 'package:clinigo/database/db_helper.dart';
+import 'package:clinigo/models/models.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
