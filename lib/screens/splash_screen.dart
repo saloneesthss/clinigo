@@ -92,7 +92,7 @@ class _SplashScreenState extends State<SplashScreen>
                 Text(
                   'Your Health, Our Priority',
                   style: TextStyle(
-                    fontSize: 14,
+                    fontSize: 16,
                     color: Colors.white.withOpacity(0.75),
                     fontWeight: FontWeight.w400,
                   ),

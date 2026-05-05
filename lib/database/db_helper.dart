@@ -234,6 +234,48 @@ class DBHelper {
 
   Future<List<Map<String, dynamic>>> getAppointmentsByUser(int userId) async {
     final db = await database;
+    final upcoming = await db.query(
+      'appointments',
+      where: 'user_id = ? AND status = ?',
+      whereArgs: [userId, 'upcoming'],
+    );
+
+    final now = DateTime.now();
+
+    for (final appt in upcoming) {
+      final dateStr = appt['date'] as String;      // e.g. "2025-06-10"
+      final timeStr = appt['time_slot'] as String; // e.g. "02:00 PM"
+
+      // Parse the date
+      final dateParts = dateStr.split('-');
+      if (dateParts.length != 3) continue;
+      final year   = int.tryParse(dateParts[0]) ?? 0;
+      final month  = int.tryParse(dateParts[1]) ?? 0;
+      final day    = int.tryParse(dateParts[2]) ?? 0;
+
+      // Parse the time — "02:00 PM" → 24-hour hour + minute
+      final timeParts  = timeStr.split(' ');
+      final isPM       = timeParts.length == 2 && timeParts[1] == 'PM';
+      final clockParts = timeParts[0].split(':');
+      var   hour       = int.tryParse(clockParts[0]) ?? 0;
+      final minute     = clockParts.length == 2 ? (int.tryParse(clockParts[1]) ?? 0) : 0;
+
+      // Convert 12-hour → 24-hour
+      if (isPM && hour != 12) hour += 12;
+      if (!isPM && hour == 12) hour = 0;
+
+      final appointmentDateTime = DateTime(year, month, day, hour, minute);
+
+      // If the appointment time has passed, mark it completed
+      if (appointmentDateTime.isBefore(now)) {
+        await db.update(
+          'appointments',
+          {'status': 'completed'},
+          where: 'id = ?',
+          whereArgs: [appt['id']],
+        );
+      }
+    }
     return await db.rawQuery('''
       SELECT 
         appointments.*,
